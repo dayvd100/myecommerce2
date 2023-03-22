@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import Carrinho from './pages/carrinho';
 import App from './App';
 import Sneakers from './pages/sneakers';
 import SweatShirt from './pages/sweatShirt';
@@ -17,6 +18,7 @@ root.render(
               <Route path='/sneakers' element={<Sneakers/>}/>
               <Route path='/sweatshirt' element={<SweatShirt/>}/>
               <Route path='/blouses' element={<Blouses/>}/>
+              <Route path='/carrinho' element={<Carrinho/>}></Route>
           </Route>
        </Routes>
     </Router>
