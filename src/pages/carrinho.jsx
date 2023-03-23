@@ -5,7 +5,15 @@ import axios from 'axios';
 function Carrinho() {
 
     const [sneakers, setSneakers] = useState([]);
-    const productsCar = JSON.parse(localStorage.getItem('productsCar'));
+    const [productsCar, setProdctusCar] = useState(0);
+
+    const getProduct = () => {
+      const productsLocal = JSON.parse(localStorage.getItem('productsCar'));
+      setProdctusCar(productsLocal);
+    };
+
+    useEffect(() => getProduct(), []);
+   
     let product1 = [];
 
     const getApi = async () => {
@@ -20,15 +28,20 @@ function Carrinho() {
         product1.push(...product);
       }
 
-   
-     
+      const remove = async (productIndex) => {
+      console.log(product1[productIndex]);
+      // localStorage.productsCar = JSON.stringify(product1);
+      getApi();
+      };
 
   return (
     <div className='container'>
 
-        {  product1.map((product) => 
-        <div className='divSneakers'>
+        {product1.map((product, index) => 
+        <div className='divSneakers' key={product.id}>
             <img className='airJordanImg' src={product.main_picture_url} alt="sneaker-img"/>
+            <p className='description'>Modelo {product.name}</p>
+            <p className='adicionarCarrinho' onClick={() => remove(index)}>Remover</p>
         </div>)}
     </div>
   )

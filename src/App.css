@@ -82,3 +82,10 @@ body{
   color: black;
   text-decoration: underline;
 }
+
+.description{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
