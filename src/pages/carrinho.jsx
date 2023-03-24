@@ -5,7 +5,7 @@ import axios from 'axios';
 function Carrinho() {
 
     const [sneakers, setSneakers] = useState([]);
-    const [productsCar, setProdctusCar] = useState(0);
+    const [productsCar, setProdctusCar] = useState([]);
 
     const getProduct = () => {
       const productsLocal = JSON.parse(localStorage.getItem('productsCar'));
@@ -23,26 +23,28 @@ function Carrinho() {
     
       useEffect(() => {getApi()}, []);
 
-      for(let i = 0; i < productsCar.length; i++){
-        const product = sneakers.filter((sneaker) => (sneaker.id === productsCar[i]));
-        product1.push(...product);
-      }
+      if(productsCar === null)
+      {return}
+        else{
+            for(let i = 0; i < productsCar.length; i++){
+            const product = sneakers.filter((sneaker) => (sneaker.id === productsCar[i]));
+            product1.push(...product);
+      }}
 
       const remove = async (productIndex) => {
-      console.log(product1[productIndex]);
-      // localStorage.productsCar = JSON.stringify(product1);
-      getApi();
+      console.log(productIndex);
       };
 
   return (
     <div className='container'>
-
-        {product1.map((product, index) => 
+        
+        {product1.length > 0 ? product1.map((product, index) => 
         <div className='divSneakers' key={product.id}>
             <img className='airJordanImg' src={product.main_picture_url} alt="sneaker-img"/>
             <p className='description'>Modelo {product.name}</p>
             <p className='adicionarCarrinho' onClick={() => remove(index)}>Remover</p>
-        </div>)}
+        </div>) : null}
+        
     </div>
   )
 }
