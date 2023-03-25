@@ -28,7 +28,7 @@ function Sneakers() {
         <div key={airJordan.id} className='divSneakers'>
             <img className='airJordanImg' src={airJordan.main_picture_url} alt="sneaker"/>
             <p className='sneakerName'>{airJordan.brand_name}</p>
-            <p className='adicionarCarrinho' onClick={() => addInTheCar(airJordan.id)}>Adicionar ao carrinho</p>
+            <p className='adicionarCarrinho' onClick={() => addInTheCar(airJordan)}>Adicionar ao carrinho</p>
         </div>)}
     </div>
   )
