@@ -4,7 +4,7 @@ import './search.css';
 function Search(props) {
   return (
     <div>
-    <input className='search' placeholder={`Pesquisar ${props.labelName}`}/>
+    <input className='search'/>
     </div>
   )
 }

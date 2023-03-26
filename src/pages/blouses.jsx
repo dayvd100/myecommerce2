@@ -4,7 +4,7 @@ import Search from '../components/search'
 function Blouses() {
   return (
     <div>
-      <Search labelName="Blouse"/>
+      <Search/>
     </div>
   )
 }

@@ -95,3 +95,8 @@ body{
   width: 30%;
   margin-top: 0.6rem;
 }
+
+.snkrName{
+  align-items: center;
+  margin-left: 20%;
+}
