@@ -39,7 +39,7 @@ body{
 
 .divSneakers{
   background-color:rgb(205, 211, 211);
-  margin-top: 2rem;
+  margin-top: 5rem;
   align-items: center;
   justify-content: center;
   border-radius: 0.2rem;
@@ -88,4 +88,10 @@ body{
   text-align: center;
   justify-content: center;
   font-family: sans-serif;
+}
+
+.searchDiv{
+  position: absolute;
+  width: 30%;
+  margin-top: 0.6rem;
 }

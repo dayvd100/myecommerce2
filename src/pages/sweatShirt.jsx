@@ -1,8 +1,10 @@
-import React from 'react'
+import Search from '../components/search';
 
 function SweatShirt() {
   return (
-    <div>sweatShirt</div>
+    <div>
+      <Search labelName={"Shirt"}/>
+    </div>
   )
 }
 

@@ -1,0 +1,9 @@
+.search{
+    position: absolute;
+    width: 100%;
+    border: none;
+    background-color: rgb(207, 211, 211);
+    border-radius: 0.2rem;
+    height: 2rem;
+    font-size: 2rem;
+}

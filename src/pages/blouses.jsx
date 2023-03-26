@@ -1,8 +1,11 @@
 import React from 'react'
+import Search from '../components/search'
 
 function Blouses() {
   return (
-    <div>bloues</div>
+    <div>
+      <Search labelName="Blouse"/>
+    </div>
   )
 }
 

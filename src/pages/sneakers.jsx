@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import Search from '../components/search';
 
 function Sneakers() {
     
@@ -24,6 +25,9 @@ function Sneakers() {
 
   return (
     <div className='container'>
+      <div className='searchDiv'>
+      <Search labelName={"Air Jordan"}/>
+      </div>
         {airJordans.map((airJordan) => 
         <div key={airJordan.id} className='divSneakers'>
             <img className='airJordanImg' src={airJordan.main_picture_url} alt="sneaker"/>
