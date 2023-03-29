@@ -1,9 +1,9 @@
-import Search from '../components/search';
+import "../components/search.css"
 
 function SweatShirt() {
   return (
     <div>
-      <Search labelName={"Shirt"}/>
+       <input className='search' placeholder='Pesquisar' />
     </div>
   )
 }

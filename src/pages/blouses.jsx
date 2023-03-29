@@ -1,10 +1,10 @@
 import React from 'react'
-import Search from '../components/search'
+import "../components/search.css"
 
 function Blouses() {
   return (
     <div>
-      <Search/>
+       <input className='search' placeholder='Pesquisar' />
     </div>
   )
 }

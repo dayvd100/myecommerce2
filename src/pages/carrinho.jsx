@@ -50,7 +50,7 @@ function Carrinho() {
             <img className='airJordanImg' src={product.main_picture_url} alt="sneaker-img"/>
             <p className='description'>Modelo {product.name}</p>
             <p className='adicionarCarrinho' onClick={() => {{remover(index)}; {handleClick()}}} >Remover</p>
-            <Snackbar open={open} autoHideDuration={1200} onClose={handleClose}>
+            <Snackbar open={open} autoHideDuration={1200} onClose={handleClose} sx={{marginLeft: "44%"}}>
            <Alert onClose={handleClose} severity="error" sx={{ width: '100%', boxShadow: "none"}}>
               Item removido
            </Alert>
