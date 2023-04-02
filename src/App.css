@@ -40,7 +40,7 @@ body{
 
 .divSneakers{
   background-color:white;
-  margin-top: 5rem;
+  margin-top: 8rem;
   align-items: center;
   justify-content: center;
   border-radius: 0.2rem;
@@ -52,7 +52,9 @@ body{
 }
 
 .airJordanImg{
-  width: 400px;
+  /* width: 360px; */
+  height: 20rem;
+  width: 100%;
 }
 
 .sneakerName{

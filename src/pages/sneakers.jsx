@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import { useHref, useNavigate, useNavigation } from 'react-router-dom';
 
 function Sneakers() {
   
@@ -20,6 +21,7 @@ function Sneakers() {
   const getApi = async () => {
     const snkrAPI = await axios.get("http://127.0.0.1:5500/arquivo.html");
     setSneakers(snkrAPI.data.sneakers);
+    localStorage.sneakers = JSON.stringify(snkrAPI.data.sneakers);
     if(sneakerSearched){
       console.log("tem algo")
     }else{setSneakerSearched(snkrAPI.data.sneakers)}
@@ -51,6 +53,13 @@ function Sneakers() {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
 
+  const navigate = useNavigate();
+
+  const naviToSneakerPage = (id) => {
+        navigate("/sneaker")
+        localStorage.sneakerId = JSON.stringify(id);
+  }
+
   return (
     <div className='container'>
       <div className='searchDiv'>
@@ -59,10 +68,10 @@ function Sneakers() {
         {sneakerSearched ? sneakerSearched.map((airJordan) => 
         <div key={airJordan.id} className='divSneakers'>
             <img className='airJordanImg' src={airJordan.main_picture_url} alt="sneaker"/>
-            <hr style={{marginTop: "4rem"}}/>
             <p className='sneakerName'>{airJordan.brand_name}</p>
             <p className='snkrName'>{airJordan.name}</p>
             <p className='adicionarCarrinho' onClick={() => {{addInTheCar(airJordan)};{handleClick()}}}>Adicionar ao carrinho</p>
+            <p className='adicionarCarrinho' onClick={() => {naviToSneakerPage(airJordan.id)}}>Ver produto</p>
             <Snackbar open={open} autoHideDuration={1200} onClose={handleClose} sx={{marginLeft: "42%"}}>
            <Alert onClose={handleClose} severity="success" sx={{ width: '100%', boxShadow: "none"}}>
               Adicionado com sucesso
